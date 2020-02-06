@@ -11,6 +11,7 @@ function App() {
         <Header />
         <Landing />
       </Wrapper>
+      <h1>Test</h1>
     </div>
   );
 }

@@ -1,9 +1,14 @@
 import React from 'react';
+import GridData from './GridData';
 
 // import css
 
 function Landing() {
-  return;
+  return (
+    <>
+      <GridData />
+    </>
+  );
 }
 
 export default Landing;
