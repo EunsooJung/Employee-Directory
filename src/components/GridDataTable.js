@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import GridDataBody from './GridDataBody';
 // import css
-import GridDataContext from '../routes/GridDataContext';
+import GridDataContext from '../utils/GridDataContext';
 
 const GridDataTable = () => {
   const context = useContext(GridDataContext);
