@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GridDataTable from './GridDataTable';
 import Navigation from './Navigation';
 import RandomUserAPI from '../routes/RandomUserAPI';
-import GridDataContext from '../routes/GridDataContext';
+import GridDataContext from '../routes/gridDataContext';
 
 const GridData = () => {
   const [developerState, setDeveloperState] = useState({
