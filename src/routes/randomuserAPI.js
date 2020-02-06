@@ -1,7 +1,7 @@
 /**
  * Search Public-APIs on Goole
  * Used https://randomuser.me/ with axios
- * https://randomuser.me/api/?results=10&nat=us
+ * https://randomuser.me/api/?results=20&nat=us
  */
 
 import axios from 'axios';
@@ -9,6 +9,6 @@ import axios from 'axios';
 export default {
   // Get 10 users
   getUsers: function() {
-    return axios.get('https://randomuser.me/api/?results=10&nat=us');
+    return axios.get('https://randomuser.me/api/?results=20&nat=us');
   }
 };
