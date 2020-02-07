@@ -7,7 +7,7 @@
 import axios from 'axios';
 
 export default {
-  // Get 10 users
+  // Gets users from randomuser.me
   getUsers: function() {
     return axios.get('https://randomuser.me/api/?results=20&nat=us');
   }

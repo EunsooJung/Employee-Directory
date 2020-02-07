@@ -8,6 +8,6 @@
 
 import React from 'react';
 
-const GridDataContext = React.createContext({});
+const DataAreaContext = React.createContext({});
 
-export default GridDataContext;
+export default DataAreaContext;

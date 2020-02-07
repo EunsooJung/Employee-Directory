@@ -1,28 +1,28 @@
 import React, { useContext } from 'react';
-import GridDataBody from './GridDataBody';
-// import css
-import GridDataContext from '../utils/GridDataContext';
+import DataBody from './GridDataBody';
+import '../styles/GridDataTable.css';
+import DataAreaContext from '../utils/GridDataContext';
 
-const GridDataTable = () => {
-  const context = useContext(GridDataContext);
+const DataTable = () => {
+  const context = useContext(DataAreaContext);
 
   return (
-    <div className='datatable mt5'>
+    <div className='datatable mt-5'>
       <table
         id='table'
         className='table table-striped table-hover table-condensed'
       >
         <thead>
           <tr>
-            {context.developerState.heading.map(({ name, width }) => {
+            {context.developerState.headings.map(({ name, width }) => {
               return (
                 <th
                   className='col'
                   key={name}
                   style={{ width }}
                   onClick={() => {
-                    // name.toLowerCase()
-                    context.handleSoft(name);
+                    // context.handleSort(name.toLowerCase());
+                    context.handleSort(name);
                   }}
                 >
                   {name}
@@ -33,10 +33,10 @@ const GridDataTable = () => {
           </tr>
         </thead>
 
-        <GridDataBody />
+        <DataBody />
       </table>
     </div>
   );
 };
 
-export default GridDataTable;
+export default DataTable;

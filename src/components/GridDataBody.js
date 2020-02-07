@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-// import css
+import '../styles/GridDataBody.css';
 import GridDataContext from '../utils/GridDataContext';
 
 const GridDataBody = () => {
   const context = useContext(GridDataContext);
 
   function dateFormat(date) {
-    const dateArr = date.spilt('-');
+    const dateArr = date.split('-');
     const year = dateArr[0];
     const month = dateArr[1];
-    const dayArr = dateArr[2].spilt('T');
+    const dayArr = dateArr[2].split('T');
     const day = dayArr[0];
     const formattedDate = [month, day, year].join('-');
     return formattedDate;
