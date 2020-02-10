@@ -1,68 +1,132 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create a Employee-Directory web applicaion with React Framework and Node.js with MVC Pattern.
 
-## Available Scripts
+- [Employee-Directory-Web-Application: Demo](https://eunsoojung.github.io/Employee-Directory/)
 
-In the project directory, you can run:
+- [Applied to My Reponsive Portfolio](https://eunsoojung.github.io/Responsive-Portfolio/portfolio.html)
 
-### `yarn start`
+## Getting Started
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+See deployment for notes on how to deploy the project on a live system.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```bash
+# Install packages
+npm i axios
 
-### `yarn test`
+# Run
+npm start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Preview
 
-### `yarn build`
+[![Employee-Directory](https://github.com/EunsooJung/Shopping-Cart/blob/master/public/images/Materials%20E-Shop-Demo.gif)](https://github.com/EunsooJung/Shopping-Cart/blob/master/public/images/Materials%20E-Shop-Demo.gif)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Basic Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get Employee-Directory, after downloading, you need to make sure Git Bash terminal open and looking at the correct folder. When you are within the correct location, you may type the following commands to ask her for information:
 
-### `yarn eject`
+- npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Guidelines:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Proceeds as follows:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To use this applicaion, Clone the applicaion to your local git repository or directory:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- In your terminal, git clone https://github.com/EunsooJung/Employee-Directory.git
 
-## Learn More
+To start:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- You have to install npm packages depend on my package.json file: "npm install"
+- Open your terminal then "npm start"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Code Snippet
 
-### Code Splitting
+- Project structure
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  [![Employee-Directory-Project-Structure](https://github.com/EunsooJung/Shopping-Cart/blob/master/public/images/Shopping-Cart-ProjectStructure.png)]
 
-### Analyzing the Bundle Size
+- Source Code Check point
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. folder "components": It provides react components.
+   1.1 Applied React Hooks to use state and other React features without writing class.
 
-### Making a Progressive Web App
+```javascript
+/**
+ * State Hook
+ */
+// // Declare a new state variable, which we'll call "developerState"
+const [developerState, setDeveloperState] = useState({
+    users: [],
+    order: 'descend',
+    filteredUsers: [],
+    headings: [
+      { name: 'Image', width: '10%', order: 'descend' },
+      { name: 'name', width: '10%', order: 'descend' },
+      { name: 'phone', width: '20%', order: 'descend' },
+      { name: 'email', width: '20%', order: 'descend' },
+      { name: 'dob', width: '10%', order: 'descend' }
+    ]
+  });
+...
+/**
+ * Effect Hook: The Effect Hook lets you perform side effects in function components.
+ */
+// If you only want to run the function given to useEffect after the initial render, you can give it an empty array as second argument.
+  useEffect(() => {
+    RandomUserAPI.getUsers().then(results => {
+      console.log(results.data.results);
+      setDeveloperState({
+        ...developerState,
+        users: results.data.results,
+        filteredUsers: results.data.results
+      });
+    });
+  }, []);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
 
-### Advanced Configuration
+1.2 Applied React Context: Context provides a way to pass data through the component tree without having to pass props down manually at every level. - utils/GridDataContext.js
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```javascript
+import React from 'react';
 
-### Deployment
+const DataAreaContext = React.createContext({});
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+export default DataAreaContext;
+```
 
-### `yarn build` fails to minify
+1.3 Applied axios to get external api's data
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```javascript
+import axios from 'axios';
+
+export default {
+  // Gets users from randomuser.me
+  getUsers: function() {
+    return axios.get('https://randomuser.me/api/?results=20&nat=us');
+  }
+};
+```
+
+## Built With
+
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Node.js](https://nodejs.org/en/)
+- [MVC Patterns](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+- [React](https://reactjs.org/)
+
+## Authors
+
+- **Michael(Eunsoo)Jung**
+
+* [Employee-Directory-Web-Application: Demo]()
+* [My Portfolio](https://eunsoojung.github.io/Responsive-Portfolio/portfolio.html)
+* [Link to Employee-Directory-Web-Application Github](https://github.com/EunsooJung/Employee-Directory.git)
+* [Link to LinkedIn](www.linkedin.com/in/eun-soo-jung/)
+
+## License
+
+This project is licensed under the MIT License
