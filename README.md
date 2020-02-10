@@ -19,7 +19,7 @@ npm start
 
 ## Preview
 
-[![Employee-Directory](https://github.com/EunsooJung/Shopping-Cart/blob/master/public/images/Materials%20E-Shop-Demo.gif)](https://github.com/EunsooJung/Shopping-Cart/blob/master/public/images/Materials%20E-Shop-Demo.gif)
+[![Employee-Directory](https://github.com/EunsooJung/Employee-Directory/blob/master/public/images/Employee-Directory-demo.gif)](https://github.com/EunsooJung/Employee-Directory/blob/master/public/images/Employee-Directory-demo.gif)
 
 ## Usage
 
@@ -46,7 +46,7 @@ To start:
 
 - Project structure
 
-  [![Employee-Directory-Project-Structure](https://github.com/EunsooJung/Shopping-Cart/blob/master/public/images/Shopping-Cart-ProjectStructure.png)]
+  [![Employee-Directory-Project-Structure](https://github.com/EunsooJung/Employee-Directory/blob/master/public/images/Project-Structure.png)]
 
 - Source Code Check point
 
